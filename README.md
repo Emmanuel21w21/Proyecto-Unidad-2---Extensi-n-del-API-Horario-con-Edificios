@@ -21,6 +21,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Gestión de edificios y aulas
+
+Con la aplicación en ejecución, abre `/edificios` para registrar edificios y consultar sus aulas. Desde cada edificio puedes elegir **Agregar aula**; el formulario asigna el aula a ese edificio. La ruta `/listar` muestra todas las aulas y permite editar su edificio asignado.
+
+Antes de usar estas pantallas, configura la conexión de base de datos en `.env` y ejecuta `php artisan migrate`.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.

@@ -8,6 +8,24 @@ use Illuminate\Support\Facades\Validator;
 
 class EdificioController extends Controller
 {
+    public function webIndex()
+    {
+        $edificios = Edificio::with('aulas')->orderBy('nombre')->get();
+
+        return view('edificio.index', compact('edificios'));
+    }
+
+    public function webStore(Request $request)
+    {
+        $datos = $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+        ]);
+
+        Edificio::create($datos);
+
+        return redirect()->route('edificios.web.index')->with('status', 'Edificio agregado correctamente.');
+    }
+
     public function index()
     {
         return Edificio::with('aulas')->get()->toJson();
