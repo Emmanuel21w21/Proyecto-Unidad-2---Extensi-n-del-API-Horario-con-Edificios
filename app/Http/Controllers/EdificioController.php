@@ -26,6 +26,22 @@ class EdificioController extends Controller
         return redirect()->route('edificios.web.index')->with('status', 'Edificio agregado correctamente.');
     }
 
+    public function webEdit(Edificio $edificio)
+    {
+        return view('edificio.editar', compact('edificio'));
+    }
+
+    public function webUpdate(Request $request, Edificio $edificio)
+    {
+        $datos = $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+        ]);
+
+        $edificio->update($datos);
+
+        return redirect()->route('edificios.web.index')->with('status', 'Nombre del edificio actualizado correctamente.');
+    }
+
     public function index()
     {
         return Edificio::with('aulas')->get()->toJson();

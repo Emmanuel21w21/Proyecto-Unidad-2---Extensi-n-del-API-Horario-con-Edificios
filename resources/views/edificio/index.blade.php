@@ -6,6 +6,7 @@
  <title>Edificios</title>
 </head>
 <body>
+<nav><a href="{{ url('/') }}">Volver al menú principal</a></nav>
 <h1>Edificios</h1>
 @if (session('status'))
  <p>{{ session('status') }}</p>
@@ -30,6 +31,7 @@
 @forelse ($edificios as $edificio)
  <section>
   <h3>{{ $edificio->nombre }}</h3>
+  <a href="{{ route('edificios.web.edit', $edificio) }}">Editar nombre</a>
   @if ($edificio->aulas->isNotEmpty())
    <ul>
     @foreach ($edificio->aulas as $aula)

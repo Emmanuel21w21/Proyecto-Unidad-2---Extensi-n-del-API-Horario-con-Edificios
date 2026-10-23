@@ -6,6 +6,7 @@
  <title>Agregar aula</title>
 </head>
 <body>
+<nav><a href="{{ url('/') }}">Volver al menú principal</a></nav>
 <h1>Agregar aula</h1>
 @if ($errors->any())
  <ul>

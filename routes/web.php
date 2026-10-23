@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('edificios', [EdificioController::class, 'webIndex'])->name('edificios.web.index');
 Route::post('edificios', [EdificioController::class, 'webStore'])->name('edificios.web.store');
+Route::get('edificios/{edificio}/editar', [EdificioController::class, 'webEdit'])->name('edificios.web.edit');
+Route::put('edificios/{edificio}', [EdificioController::class, 'webUpdate'])->name('edificios.web.update');
 
 Route::get('preagregar',[AulaController::class, 'create'])->name('aulas.agregar');
 Route::get('seleccionar/{x}' ,[AulaController::class, 'edit'])->name('aulas.actualizar');

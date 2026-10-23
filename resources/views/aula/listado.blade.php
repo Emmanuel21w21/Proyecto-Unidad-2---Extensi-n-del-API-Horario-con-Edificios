@@ -6,6 +6,7 @@
  <title>Aulas</title>
 </head>
 <body>
+<nav><a href="{{ url('/') }}">Volver al menú principal</a></nav>
 <h1>Aulas</h1>
 @if (session('status'))
  <p>{{ session('status') }}</p>
